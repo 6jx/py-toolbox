@@ -4,8 +4,6 @@ Purpose: Correcting file extensions of images, fixing thumbnails/whatnot on imag
 
 Usage:
 
-`
-pip install -r requirements.txt
+`pip install -r requirements.txt
 
-python imagetypecorrector.py
-`
+python imagetypecorrector.py`
