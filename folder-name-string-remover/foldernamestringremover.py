@@ -1,16 +1,12 @@
 import os
-lsdir = os.listdir(path=".")
-ic1 = input("String to remove from all files? (CaSe SeNsItIvE)    ")
-files = []
-for x in lsdir:
-    isDir = os.path.isdir(x)
-    if isDir is False and x != __file__:
-        files.append(x)
-for x in files:
-    filename, file_extension = os.path.splitext(x)
+ic1 = input("Input the string which you wish to remove from all folders in this directory (CaSe SeNsItIvE, and space sensitive)    ")
+dirlist = os.listdir(path=".")
+for i in dirlist:
+    filename, file_extension = os.path.splitext(i)
     y = filename.replace(ic1,'')
-    try:
-        os.replace(x, y + file_extension)
-        print(x, "===>", y + file_extension)
-    except:
-        print("Failed to rename a file.")
+    if os.path.isdir(i) == True:
+        try:
+            os.replace(i,y + file_extension)
+            print(i, "==>", y + file_extension)
+        except:
+            ("Failed to rename", i)
