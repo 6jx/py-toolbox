@@ -1,16 +1,11 @@
 import os
-lsdir = os.listdir(path='.')
-folders = []
+lsdir = os.listdir(path=".")
 print("Folder Name Prepender")
-ic = input("What do you wish to prepend this folder with?")
-prepend = ic
-for x in lsdir:
-    isDir = os.path.isdir(x)
-    if isDir is True and x != __file__:
-        folders.append(x)
-for x in folders:
-    try:
-        os.replace(x, prepend + x)
-        print(x + " ===> " + prepend + x)
-    except:
-        print("Failed to rename a folder.")
+ic = input("Input String To Prepend      ")
+for i in lsdir:
+    if os.path.isdir(i) == True:
+        try:
+            os.replace(i, ic + i)
+            print(i, "=>", ic + i)
+        except:
+            print("Failed to rename", i)
